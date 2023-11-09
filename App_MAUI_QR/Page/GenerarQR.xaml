@@ -2,27 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_MAUI_QR.Page.GenerarQR"
+              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.Maui"
              Title="Generar QR">
+    
     <VerticalStackLayout
-        Spacing="25"
-        Padding="30,0"
+       
+        Margin="3"
         VerticalOptions="Center">
 
-     
 
+        <Label 
+            Text="Ingrese Texto"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
 
-        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,0,0,30">
+        <Entry x:Name="entryText" Text="{Binding TextoValor}" />
+        <StackLayout
+            Orientation="Horizontal"
+            Margin="10,10,10,10"
+            HorizontalOptions="Center">
+
+            <Button Text="Generar QR" 
+                    Clicked="Button_Clicked" 
+                    Margin="0,10,10,10" />
             <Button
                 x:Name="btnRegresar"
                 Clicked="btnRegresar_Clicked"
                 Text="Regresar"
-                />
-
+                 Margin="0,10,10,10"/>
         </StackLayout>
 
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <zxing:BarcodeGeneratorView
+            WidthRequest="150"
+            HeightRequest="150"
+            Format="QrCode"
+            Value="{Binding oGenerarQRModel.valorQR}"
+            Margin="4"/>
+
+
+
     </VerticalStackLayout>
 </ContentPage>
