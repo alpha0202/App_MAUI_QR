@@ -13,6 +13,8 @@ public partial class MenuPage : ContentPage
 		Lista = new List<MenuCLS>();
 		Lista.Add(new MenuCLS { IdMenu=1,NombreOpcion="Leer QR",NombreIcono= "ic_phonereader" });
 		Lista.Add(new MenuCLS { IdMenu=2,NombreOpcion="Generar QR",NombreIcono= "ic_generarqr" });
+		Lista.Add(new MenuCLS { IdMenu=3,NombreOpcion="Generar Codigo de Barras",NombreIcono= "ic_barcode" });
+		Lista.Add(new MenuCLS { IdMenu=4,NombreOpcion="Leer Codigo de Barras",NombreIcono= "ic_leerbarcode" });
 		BindingContext = this;
 
 	}
@@ -21,10 +23,10 @@ public partial class MenuPage : ContentPage
     {
 		var selectMenu = oMenuCLS.IdMenu;
 
-		//if(oMenuCLS.IdMenu == 1)
-		//{
-		//	App.Current.MainPage = new ScanQR();
-		//}
+        //if(oMenuCLS.IdMenu == 1)
+        //{
+        //	App.Current.MainPage = new ScanQR();
+        //}
 
         switch (selectMenu)
         {
@@ -35,6 +37,12 @@ public partial class MenuPage : ContentPage
 
             case 2:
                 App.Current.MainPage = new GenerarQR();
+                break;
+            case 3:
+                App.Current.MainPage = new GenerarBarCode();
+                break;
+            case 4:
+                App.Current.MainPage = new ScanBarCode();
                 break;
         }
 

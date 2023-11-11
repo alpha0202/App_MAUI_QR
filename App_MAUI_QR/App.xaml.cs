@@ -8,7 +8,7 @@ namespace App_MAUI_QR
         {
             InitializeComponent();
 
-            MainPage = new PrincipalPage();
+            MainPage = new LoginPage();
         }
     }
 }

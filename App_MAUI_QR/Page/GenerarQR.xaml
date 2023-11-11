@@ -16,7 +16,10 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Entry x:Name="entryText" Text="{Binding TextoValor}" />
+        <Entry 
+            x:Name="entryText" 
+            Text="{Binding TextoValor}" />
+        
         <StackLayout
             Orientation="Horizontal"
             Margin="10,10,10,10"
