@@ -7,8 +7,10 @@ namespace App_MAUI_QR
         public App()
         {
             InitializeComponent();
-
+            if(Preferences.Get("idusuario",0)==0)
             MainPage = new LoginPage();
+            else
+                MainPage = new PrincipalPage();
         }
     }
 }

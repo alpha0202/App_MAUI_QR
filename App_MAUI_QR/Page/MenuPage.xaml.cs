@@ -15,6 +15,9 @@ public partial class MenuPage : ContentPage
 		Lista.Add(new MenuCLS { IdMenu=2,NombreOpcion="Generar QR",NombreIcono= "ic_generarqr" });
 		Lista.Add(new MenuCLS { IdMenu=3,NombreOpcion="Generar Codigo de Barras",NombreIcono= "ic_barcode" });
 		Lista.Add(new MenuCLS { IdMenu=4,NombreOpcion="Leer Codigo de Barras",NombreIcono= "ic_leerbarcode" });
+		Lista.Add(new MenuCLS { IdMenu=5,NombreOpcion="Alumnos",NombreIcono= "ic_estudiantes" });
+		Lista.Add(new MenuCLS { IdMenu=6,NombreOpcion="Asistencia",NombreIcono= "ic_asistencia" });
+		Lista.Add(new MenuCLS { IdMenu=100,NombreOpcion="Cerrar Sesión",NombreIcono= "ic_cerrarsesion" });
 		BindingContext = this;
 
 	}
@@ -43,6 +46,18 @@ public partial class MenuPage : ContentPage
                 break;
             case 4:
                 App.Current.MainPage = new ScanBarCode();
+                break;
+
+            case 5:
+                App.Current.MainPage = new AlumnosPage();
+                break;
+            case 6:
+                App.Current.MainPage = new AsistenciaPage();
+                break;
+
+            default:
+                App.Current.MainPage = new LoginPage();
+                Preferences.Remove("idusuario");
                 break;
         }
 

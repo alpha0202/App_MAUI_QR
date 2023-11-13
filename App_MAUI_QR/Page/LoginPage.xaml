@@ -18,19 +18,29 @@
         <Label 
             Text="Ingrese Usuario"
             Padding="30,0,30,0"/>
-        <Entry Text="{Binding NombreUsuario}"/>
+        <Entry 
+            x:Name="user"
+             Margin="30,0,30,0"
+             
+            Text="{Binding NombreUsuario}"
+            />
 
 
 
         <Label 
          Text="Contraseña"
             Padding="30,0,30,0"/>
-        <Entry IsPassword="True" 
+       
+        <Entry 
+               IsPassword="True"
+               x:Name="pass"
+               Margin="30,0,30,0"
                Text="{Binding Password}"
               />
 
         <Button Text="Ingresar"
                 x:Name="Ingresar"
+                Margin="30,0,30,0"
                 Clicked="Ingresar_Clicked"/>
 
     </VerticalStackLayout>

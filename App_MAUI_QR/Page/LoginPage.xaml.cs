@@ -13,6 +13,14 @@ public partial class LoginPage : ContentPage
 
     private void Ingresar_Clicked(object sender, EventArgs e)
     {
-
+        if(NombreUsuario.Trim() =="edwin" &&  Password.Trim() == "1234")
+        {
+            App.Current.MainPage = new PrincipalPage();
+            Preferences.Set("idusuario", 1);
+        }
+        else
+        {
+            DisplayAlert("Error", "Usuario y contraseña incorrecta.", "Cancelar");
+        }
     }
 }
